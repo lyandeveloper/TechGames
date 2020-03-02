@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+header {
+  width: 100%;
+  padding: 20px 0;
+  background: #222;
+}
+
+.header-wrapper {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+header a {
+  color: white;
+}
+
+header .logo {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Bangers', cursive, Arial, Helvetica, sans-serif;
+}
+
+.social-medias {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social-medias span {
+  font-size: 22px;
+  margin-right: 20px;
+  color: white;
+}
+
+.social-medias span:hover {
+  color: rgb(170, 82, 179);
+}
+
+nav {
+  width: 100%;
+  padding: 10px 0;
+}
+
+ul {
+  width: 70%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li {
+  margin-right: 20px;
+  text-transform: uppercase;
+  font-size: 14;
+  font-weight: bold;
+}
+
+a {
+  color: #333;
+  transition: color 0.5s;
+}
+
+a:hover {
+  color: rgb(170, 82, 179);
+}
+
+form.search input[type='text'] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 5px;
+  margin-right: 10px;
+}
+
+form.search button {
+  border: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+form.search button:hover {
+  color: white;
+  background: rgb(170, 82, 179);
+}
