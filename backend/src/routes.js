@@ -10,5 +10,6 @@ const routes = new Router();
 routes.get('/files/:file', FileController.show);
 
 routes.post('/post/new', upload.single('banner'), PostController.store);
+routes.get('/post/:id/:slug', PostController.index);
 
 export default routes;
