@@ -1,0 +1,29 @@
+footer {
+  width: 100%;
+  padding: 40px;
+  background: #222;
+  color: white;
+  margin-top: 20px;
+}
+
+footer .logo {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Bangers', cursive;
+
+  margin-bottom: 20px;
+}
+
+footer .logo a {
+  color: white;
+}
+
+footer .logo i {
+  color: rgb(170, 82, 179);
+}
+
+footer span {
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
