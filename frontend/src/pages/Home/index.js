@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
+import api from '../../services/api';
 
 export default function Home() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    async function loadPosts() {
+      const response = await api.get('/', {
+        ...posts,
+      });
+
+      setPosts(response.data);
+    }
+
+    loadPosts();
+  }, []);
+
   return (
     <>
       <section className="destaques">
@@ -65,53 +80,24 @@ export default function Home() {
           <section className="novidades">
             <h1 className="categoria-title">Novidades</h1>
 
-            <article className="novidade-post">
-              <Link to="#" className="novidade-post-link">
-                <div className="novidade-post-img">
-                  <img
-                    src="https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fassassins-creed-syndicate%2Fhome%2FACS-STD-2560x1440-635b7b6c86f18730071426375e7c4fe0bd831ddd.jpg?h=1080&resize=1&w=1920"
-                    alt=""
-                  />
-                </div>
-                <div className="novidade-post-text">
-                  <span>há mais de 1 hora</span>
-                  <h1>
-                    Assassin's Creed Syndicate estará gratuito no PC por tempo
-                    limitado
-                  </h1>
-                </div>
-              </Link>
-            </article>
-
-            <article className="novidade-post">
-              <Link to="#" className="novidade-post-link">
-                <div className="novidade-post-img">
-                  <img src="https://i.imgur.com/bq54j1W.jpg" alt="" />
-                </div>
-                <div className="novidade-post-text">
-                  <span>há mais de 1 hora</span>
-                  <h1>
-                    Wolcen Lords of Mayhem, game inspirado em Diablo, deixa o
-                    acesso antecipado
-                  </h1>
-                </div>
-              </Link>
-            </article>
-
-            <article className="novidade-post">
-              <Link to="#" className="novidade-post-link">
-                <div className="novidade-post-img">
-                  <img
-                    src="https://cdn3.dualshockers.com/wp-content/uploads/2019/06/Empire-of-Sin.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="novidade-post-text">
-                  <span>há mais de 1 hora</span>
-                  <h1>Empire of Sin é adiado para o final de 2020</h1>
-                </div>
-              </Link>
-            </article>
+            {posts.map(post => (
+              <article key={post.id} className="novidade-post">
+                <Link
+                  to={`/post/${post.id}/${post.slug}`}
+                  className="novidade-post-link">
+                  <div className="novidade-post-img">
+                    <img
+                      src={`http://localhost:3333/files/${post.banner}`}
+                      alt=""
+                    />
+                  </div>
+                  <div className="novidade-post-text">
+                    <span>há mais de 1 hora</span>
+                    <h1>{post.titulo}</h1>
+                  </div>
+                </Link>
+              </article>
+            ))}
           </section>
 
           <aside className="lateral">
