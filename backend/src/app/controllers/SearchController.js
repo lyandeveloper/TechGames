@@ -8,7 +8,7 @@ class SearchController {
     const resultado = await Post.findAll({
       where: {
         slug: {
-          [Op.like]: '%' + result.toLowerCase() + '%',
+          [Op.like]: '%' + result + '%',
         },
       },
     });
