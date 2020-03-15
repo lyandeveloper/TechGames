@@ -47,7 +47,10 @@ const Post = props => {
           <section className="post-feed">
             <div className="feed-post-content">
               <div className="post">
-                <div className="container">{p.conteudo}</div>
+                <div
+                  className="container"
+                  dangerouslySetInnerHTML={{ __html: p.conteudo }}
+                />
               </div>
               <Lateral />
             </div>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { parseISO, formatDistance } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 
 import './styles.css';
 import Lateral from '../../components/Lateral';
@@ -10,11 +12,17 @@ export default function Home() {
 
   useEffect(() => {
     async function loadPosts() {
-      const response = await api.get('/', {
-        ...posts,
-      });
+      const response = await api.get('/');
 
-      setPosts(response.data);
+      const data = response.data.map(post => ({
+        ...post,
+        timeDistance: formatDistance(parseISO(post.createdAt), new Date(), {
+          addSuffix: true,
+          locale: pt,
+        }),
+      }));
+
+      setPosts(data);
     }
 
     loadPosts();
@@ -93,7 +101,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="novidade-post-text">
-                    <span>há mais de 1 hora</span>
+                    <span>{post.timeDistance}</span>
                     <h1>{post.titulo}</h1>
                   </div>
                 </Link>

@@ -20,10 +20,12 @@ label[for='banner'] {
   cursor: pointer;
 }
 
-label[for='banner'] img.preview {
-  width: 100%;
-  min-height: 100%;
-  object-fit: cover;
+label[for='banner'].has-banner {
+  border: 0;
+}
+
+label[for='banner'].has-banner img {
+  display: none;
 }
 
 input#banner {
