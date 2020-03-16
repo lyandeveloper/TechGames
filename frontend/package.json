@@ -11,9 +11,11 @@
     "date-fns": "^2.10.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-facebook": "^8.1.4",
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-share": "^4.1.0",
     "react-web-vector-icons": "^1.0.2",
     "styled-components": "^5.0.1",
     "tinymce": "^5.2.0"

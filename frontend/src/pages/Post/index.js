@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { FaRegClock } from 'react-icons/fa';
 import { parseISO, formatDistance } from 'date-fns';
 import pt from 'date-fns/locale/pt';
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+} from 'react-share';
 
 import api from '../../services/api';
 
@@ -12,6 +19,8 @@ import Lateral from '../../components/Lateral';
 const Post = props => {
   const [post, setPost] = useState([]);
   const { match } = props;
+  let url = window.location.href;
+  console.log(url);
 
   let { id } = match.params;
   let { slug } = match.params;
@@ -59,6 +68,15 @@ const Post = props => {
                   className="container"
                   dangerouslySetInnerHTML={{ __html: p.conteudo }}
                 />
+                <FacebookShareButton url={url}>
+                  <FacebookIcon type="button" size={40} round={true} />
+                </FacebookShareButton>
+                <TwitterShareButton url={url}>
+                  <TwitterIcon type="button" size={40} round={true} />
+                </TwitterShareButton>
+                <WhatsappShareButton url={url}>
+                  <WhatsappIcon type="button" size={40} round={true} />
+                </WhatsappShareButton>
               </div>
               <Lateral />
             </div>
