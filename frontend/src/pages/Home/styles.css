@@ -16,6 +16,17 @@ section.destaques {
   );
 }
 
+.time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.time p {
+  margin-left: 5px;
+}
+
 .posts {
   margin-top: 20px;
   display: grid;

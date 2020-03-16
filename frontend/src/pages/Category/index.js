@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { parseISO, formatDistance } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 
 import api from '../../services/api';
 
@@ -13,12 +14,18 @@ const Category = props => {
       const { match } = props;
       let { category } = match.params;
 
-      const response = await api.get(`category/${category}`, {
-        ...category,
-      });
+      const response = await api.get(`category/${category}`);
 
-      setCategory(response.data);
+      const data = response.data.map(c => ({
+        ...c,
+        timeDistance: formatDistance(parseISO(c.createdAt), new Date(), {
+          addSuffix: true,
+          locale: pt,
+        }),
+      }));
+      setCategory(data);
     }
+
     loadCategory();
   }, [category]);
   return (
@@ -38,7 +45,7 @@ const Category = props => {
                     />
                   </div>
                   <div className="novidade-post-text">
-                    <span>há mais de 1 hora</span>
+                    <span>{c.timeDistance}</span>
                     <h1>{c.titulo}</h1>
                   </div>
                 </a>

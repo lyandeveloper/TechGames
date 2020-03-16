@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaRegClock } from 'react-icons/fa';
 import { parseISO, formatDistance } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
@@ -31,16 +32,20 @@ export default function Home() {
   return (
     <>
       <section className="destaques">
-        <div className="bg"></div>
+        <div className="bg" />
         <div className="posts">
           <article className="post-grande">
-            <Link to="" className="post-grande-link">
-              <div className="post-overlay"></div>
+            <Link to="#" className="post-grande-link">
+              <div className="post-overlay" />
               <img
                 src="https://img.ibxk.com.br/2020/02/19/19155220485783.jpg?w=640&h=400&mode=crop"
                 alt=""
               />
               <div className="post-grande-text">
+                <span className="time">
+                  <FaRegClock />
+                  <p>Há 1 hora</p>
+                </span>
                 <h1>
                   PlayStation cancela participação no PAX East por conta do
                   coronavírus
@@ -58,6 +63,10 @@ export default function Home() {
                   alt=""
                 />
                 <div className="small-post-text">
+                  <span className="time">
+                    <FaRegClock />
+                    <p>Há 20 minutos</p>
+                  </span>
                   <h1>
                     O Darksiders frenético que você já conhece, mas com gostinho
                     de novo
@@ -74,6 +83,10 @@ export default function Home() {
                   alt=""
                 />
                 <div className="small-post-text">
+                  <span className="time">
+                    <FaRegClock />
+                    <p>Há 15 minutos</p>
+                  </span>
                   <h1>
                     Xbox Series X terá hardware dedicado para melhoria de som
                   </h1>

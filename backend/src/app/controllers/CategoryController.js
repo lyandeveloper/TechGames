@@ -8,7 +8,7 @@ class Category {
       where: {
         categoria: category,
       },
-      attributes: ['id', 'banner', 'slug', 'titulo', 'categoria'],
+      attributes: ['id', 'banner', 'slug', 'titulo', 'categoria', 'createdAt'],
     });
 
     return res.json(postCategory);

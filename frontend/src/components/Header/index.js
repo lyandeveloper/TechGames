@@ -40,7 +40,7 @@ export default function Header() {
             <Link to="/category/pc">Pc</Link>
           </li>
           <li>
-            <Link to="/category/xbox-one">Xbox One</Link>
+            <Link to="/category/one">Xbox One</Link>
           </li>
           <li>
             <Link to="/category/ps4">Ps4</Link>
@@ -49,7 +49,7 @@ export default function Header() {
             <Link to="/category/switch">Nitendo Switch</Link>
           </li>
           <li>
-            <Link to="/category/xbox360">Xbox 360</Link>
+            <Link to="/category/360">Xbox 360</Link>
           </li>
           <li>
             <Link to="/category/ps3">Ps3</Link>

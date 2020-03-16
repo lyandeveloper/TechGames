@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import { parseISO, formatDistance } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 import api from '../../services/api';
 
 import Lateral from '../../components/Lateral';
@@ -13,7 +14,15 @@ const Search = props => {
     async function loadSearch() {
       const response = await api.get(`/post/search${query}`);
 
-      setSearch(response.data);
+      const data = response.data.map(s => ({
+        ...s,
+        timeDistance: formatDistance(parseISO(s.createdAt), new Date(), {
+          addSuffix: true,
+          locale: pt,
+        }),
+      }));
+
+      setSearch(data);
     }
     loadSearch();
   }, []);
@@ -36,7 +45,7 @@ const Search = props => {
                     />
                   </div>
                   <div className="novidade-post-text">
-                    <span>há mais de 1 hora</span>
+                    <span>{s.timeDistance}</span>
                     <h1>{s.titulo}</h1>
                   </div>
                 </a>

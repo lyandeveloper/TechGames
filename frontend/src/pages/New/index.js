@@ -10,7 +10,7 @@ import './styles.css';
 export default function New({ history }) {
   const [banner, setBanner] = useState(null);
   const [titulo, setTitulo] = useState();
-  const [categoria, setCategoria] = useState([]);
+  const [categoria, setCategoria] = useState('pc');
   const [conteudo, setConteudo] = useState();
 
   const preview = useMemo(() => {
@@ -80,14 +80,14 @@ export default function New({ history }) {
             value={categoria}
             onChange={handleChange}>
             <option value="pc">Pc</option>
-            <option value="xbox one">Xbox One</option>
+            <option value="one">Xbox One</option>
             <option value="ps4">Ps4</option>
-            <option value="nitendo switch">Nitendo Switch</option>
-            <option value="xbox 360">Xbox 360</option>
+            <option value="switch">Nitendo Switch</option>
+            <option value="360">Xbox 360</option>
             <option value="ps3">Ps3</option>
             <option value="3ds">3ds</option>
-            <option value="ps vita">Ps Vita</option>
-            <option value="wii u">Wii U</option>
+            <option value="psvita">Ps Vita</option>
+            <option value="wiiu">Wii U</option>
           </select>
         </label>
 

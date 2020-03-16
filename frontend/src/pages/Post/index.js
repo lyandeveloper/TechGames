@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegClock } from 'react-icons/fa';
+import { parseISO, formatDistance } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 
 import api from '../../services/api';
 
@@ -16,11 +18,17 @@ const Post = props => {
 
   useEffect(() => {
     async function loadPost() {
-      const response = await api.get(`/post/${id}/${slug}`, {
-        ...post,
-      });
+      const response = await api.get(`/post/${id}/${slug}`);
 
-      setPost(response.data);
+      const data = response.data.map(p => ({
+        ...p,
+        timeDistance: formatDistance(parseISO(p.createdAt), new Date(), {
+          addSuffix: true,
+          locale: pt,
+        }),
+      }));
+
+      setPost(data);
     }
 
     loadPost();
@@ -39,7 +47,7 @@ const Post = props => {
                   <span>
                     <FaRegClock />
                   </span>
-                  Há 2 horas atrás
+                  {p.timeDistance}
                 </span>
               </div>
             </div>
