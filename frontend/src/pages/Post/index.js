@@ -10,6 +10,7 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from 'react-share';
+import { FacebookProvider, Comments } from 'react-facebook';
 
 import api from '../../services/api';
 
@@ -77,6 +78,10 @@ const Post = props => {
                 <WhatsappShareButton url={url}>
                   <WhatsappIcon type="button" size={40} round={true} />
                 </WhatsappShareButton>
+
+                <FacebookProvider appId="1383288691873657">
+                  <Comments href={url} />
+                </FacebookProvider>
               </div>
               <Lateral />
             </div>
