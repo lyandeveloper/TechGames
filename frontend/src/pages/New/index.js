@@ -97,7 +97,7 @@ export default function New({ history }) {
             apiKey="47lya46vymryycmd82v9741zgiby49koy2ncr4o06pqwvj6s"
             init={{
               height: 400,
-              plugins: ['image', 'media', 'pageembed', 'code', 'link'],
+              plugins: ['image', 'media', 'code', 'link'],
             }}
             onEditorChange={handleEditorChange}
           />

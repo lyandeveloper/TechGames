@@ -8479,6 +8479,13 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+re-carousel@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/re-carousel/-/re-carousel-2.4.0.tgz#636ec0c8cf00b012a845d37b6f7ab1b52569806e"
+  integrity sha512-xogK+SLWHXdzEfexSC2UQWk3m6uxL3edqrAMseslEIQ/hjtPHkMLdFToI5oMptUR1t9v6Jqo/vu5mQGUs/q5cg==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-app-polyfill@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-1.0.6.tgz#890f8d7f2842ce6073f030b117de9130a5f385f0"

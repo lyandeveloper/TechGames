@@ -22,7 +22,7 @@ class PostController {
     const postslug = slugify(titulo, {
       replacement: '-',
       lower: true,
-      remove: true,
+      strict: true,
     });
 
     const post = await Post.create({

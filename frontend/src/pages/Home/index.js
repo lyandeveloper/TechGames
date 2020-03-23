@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { FaRegClock } from 'react-icons/fa';
 import { parseISO, formatDistance } from 'date-fns';
 import pt from 'date-fns/locale/pt';
+import Carousel from 're-carousel';
+import Buttons from '../../components/buttons';
+import IndicatorDots from '../../components/indicator-dots';
 
 import './styles.css';
 import Lateral from '../../components/Lateral';
@@ -10,6 +13,7 @@ import api from '../../services/api';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
+  const [recent, setRecent] = useState([]);
 
   useEffect(() => {
     async function loadPosts() {
@@ -29,71 +33,51 @@ export default function Home() {
     loadPosts();
   }, []);
 
+  useEffect(() => {
+    async function loadRecents() {
+      const response = await api.get('/post/recents');
+
+      const data = response.data.map(r => ({
+        ...r,
+        timeDistance: formatDistance(parseISO(r.createdAt), new Date(), {
+          addSuffix: true,
+          locale: pt,
+        }),
+      }));
+
+      setRecent(data);
+    }
+
+    loadRecents();
+  }, []);
+
   return (
     <>
-      <section className="destaques">
-        <div className="bg" />
-        <div className="posts">
-          <article className="post-grande">
-            <Link to="#" className="post-grande-link">
-              <div className="post-overlay" />
-              <img
-                src="https://img.ibxk.com.br/2020/02/19/19155220485783.jpg?w=640&h=400&mode=crop"
-                alt=""
-              />
-              <div className="post-grande-text">
-                <span className="time">
-                  <FaRegClock />
-                  <p>Há 1 hora</p>
-                </span>
-                <h1>
-                  PlayStation cancela participação no PAX East por conta do
-                  coronavírus
-                </h1>
-              </div>
-            </Link>
-          </article>
-
-          <div className="posts-pequeno">
-            <article className="small-post">
-              <Link to="#" className="small-post-link">
-                <div className="post-overlay"></div>
-                <img
-                  src="https://img.ibxk.com.br/2020/02/19/19120044511564.jpg?w=640&h=400&mode=crop"
-                  alt=""
-                />
-                <div className="small-post-text">
-                  <span className="time">
-                    <FaRegClock />
-                    <p>Há 20 minutos</p>
-                  </span>
-                  <h1>
-                    O Darksiders frenético que você já conhece, mas com gostinho
-                    de novo
-                  </h1>
-                </div>
-              </Link>
-            </article>
-
-            <article className="small-post">
-              <Link to="#" className="small-post-link">
-                <div className="post-overlay"></div>
-                <img
-                  src="https://img.ibxk.com.br/2020/02/19/19132604156649.jpg?w=640&h=400&mode=crop"
-                  alt=""
-                />
-                <div className="small-post-text">
-                  <span className="time">
-                    <FaRegClock />
-                    <p>Há 15 minutos</p>
-                  </span>
-                  <h1>
-                    Xbox Series X terá hardware dedicado para melhoria de som
-                  </h1>
-                </div>
-              </Link>
-            </article>
-          </div>
+      <section className="swiper-container">
+        <div className="bg">
+          <Carousel
+            className="swiper-wrapper"
+            loop
+            auto
+            widgets={[IndicatorDots, Buttons]}>
+            {recent.map(r => (
+              <article key={r.id} className="swiper-slide">
+                <Link
+                  to={`/post/${r.id}/${r.slug}`}
+                  className="post-grande-link">
+                  <div className="post-overlay" />
+                  <img src={`http://localhost:3333/files/${r.banner}`} alt="" />
+                  <div className="post-grande-text">
+                    <span className="time">
+                      <FaRegClock />
+                      <p>{r.timeDistance}</p>
+                    </span>
+                    <h1>{r.titulo}</h1>
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </Carousel>
         </div>
       </section>
 

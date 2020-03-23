@@ -27,7 +27,7 @@ const Category = props => {
     }
 
     loadCategory();
-  }, [category]);
+  }, []);
   return (
     <section className="feed">
       <div className="feed-content">

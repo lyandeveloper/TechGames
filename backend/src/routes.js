@@ -6,6 +6,7 @@ import FileController from './app/controllers/FileController';
 import FeedController from './app/controllers/FeedController';
 import SearchController from './app/controllers/SearchController';
 import CategoryController from './app/controllers/CategoryController';
+import RecentController from './app/controllers/RecentController';
 
 const upload = multer(multerConfig);
 const routes = new Router();
@@ -20,5 +21,7 @@ routes.post('/post/new', upload.single('banner'), PostController.store);
 routes.get('/post/:id/:slug', PostController.index);
 
 routes.get('/category/:category', CategoryController.index);
+
+routes.get('/post/recents', RecentController.index);
 
 export default routes;
