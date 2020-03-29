@@ -2,37 +2,37 @@
 
 Techgames é um portal de notícias sobre jogos, desenvolvido como afins de estudo. Todo o sistema foi desenvolvido usando conceito API REST, no backend NodeJS e no front ReactJS e POSTGRES para banco de dados.
 
-<img src="print1.png"/>
+<img src="assets/print1.png"/>
 
 ## Features
 
 O portal consta com um sistema de postagem onde o administrador coloca o banner da postagem, titulo, categoria e conteúdo do post, na qual implementei o Tinymce para postar o conteúdo em HTML.
 
-<img src="print9.png"/>
+<img src="assets/print9.png"/>
 
-<img src="print10.png"/>
+<img src="assets/print10.png"/>
 
 Na página home, todos os posts são classificados pelo mais recentes. Usei o Date-FNS para calcular quanto tempo se passou desde a postagem.
 
-<img src="print2.png"/>
+<img src="assets/print2.png"/>
 
 Essa é a aparência quando o usuário clica na postagem. Possibilitando ver vídeos e etc.
 
-<img src="print3.png"/>
+<img src="assets/print3.png"/>
 
-<img src="print4.png"/>
+<img src="assets/print4.png"/>
 
 O usuário poderá compartilhar a postagem nas redes sociais, assim como comentar o mesmo usando o Facebook.
 
-<img src="print5.png"/>
+<img src="assets/print5.png"/>
 
 O portal também consta com um sistema de pesquisa.
 
-<img src="print7.png"/>
+<img src="assets/print7.png"/>
 
 Também havendo a possiblidade de ver postagens por categoria.
 
-<img src="print8.png"/>
+<img src="assets/print8.png"/>
 
 ## Como testar o portal
 
