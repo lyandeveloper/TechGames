@@ -9,6 +9,7 @@ class Post extends Model {
         titulo: Sequelize.STRING,
         categoria: Sequelize.STRING,
         conteudo: Sequelize.TEXT,
+        views: Sequelize.INTEGER,
       },
       {
         sequelize,

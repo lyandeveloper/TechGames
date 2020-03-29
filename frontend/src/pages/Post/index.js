@@ -21,7 +21,6 @@ const Post = props => {
   const [post, setPost] = useState([]);
   const { match } = props;
   let url = window.location.href;
-  console.log(url);
 
   let { id } = match.params;
   let { slug } = match.params;

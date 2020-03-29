@@ -1,10 +1,10 @@
 import slugify from 'slugify';
 import Post from '../models/Post';
+import sequelize from 'sequelize';
 
 class PostController {
   async index(req, res) {
     const { id, slug } = req.params;
-
     const post = await Post.findAll({
       where: {
         id,
@@ -12,6 +12,10 @@ class PostController {
       },
     });
 
+    await Post.update(
+      { views: sequelize.literal('views + 1') },
+      { where: { id: id } }
+    );
     return res.json(post);
   }
 
@@ -31,6 +35,7 @@ class PostController {
       titulo,
       categoria,
       conteudo,
+      views: 0,
     });
 
     return res.json(post);

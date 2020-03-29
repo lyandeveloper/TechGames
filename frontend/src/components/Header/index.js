@@ -37,31 +37,31 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <Link to="/category/pc">Pc</Link>
+            <a href="/category/pc">Pc</a>
           </li>
           <li>
-            <Link to="/category/one">Xbox One</Link>
+            <a href="/category/one">Xbox One</a>
           </li>
           <li>
-            <Link to="/category/ps4">Ps4</Link>
+            <a href="/category/ps4">Ps4</a>
           </li>
           <li>
-            <Link to="/category/switch">Nitendo Switch</Link>
+            <a href="/category/switch">Nitendo Switch</a>
           </li>
           <li>
-            <Link to="/category/360">Xbox 360</Link>
+            <a href="/category/360">Xbox 360</a>
           </li>
           <li>
-            <Link to="/category/ps3">Ps3</Link>
+            <a href="/category/ps3">Ps3</a>
           </li>
           <li>
-            <Link to="/category/3ds">3ds</Link>
+            <a href="/category/3ds">3ds</a>
           </li>
           <li>
-            <Link to="/category/psvita">Ps Vita</Link>
+            <a href="/category/psvita">Ps Vita</a>
           </li>
           <li>
-            <Link to="/category/wiiu">Wii U</Link>
+            <a href="/category/wiiu">Wii U</a>
           </li>
           <form action="/post/search" className="search" method="get">
             <input
