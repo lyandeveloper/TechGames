@@ -64,4 +64,4 @@ yarn sequelize db:migrate or npx sequelize db:migrate
 yarn dev or npx dev
 ``` 
 
-5. Quando abrir o navegador, acesse a rota 'http://localhost:3333/post/new' para adicionar uma nova postagem.
+5. When you open the browser, access the route 'http://localhost:3000/post/new' to add a new post.
