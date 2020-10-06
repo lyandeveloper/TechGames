@@ -42,7 +42,7 @@ This project was developed with the following technologies:
 
 - [Node.js](https://nodejs.org/en/) 
 - [ReactJS](https://reactjs.org/) 
-- [MySQL](https://www.mysql.com/) 
+- [Postgres](https://www.postgresql.org/) 
 - [DateFNS](https://date-fns.org/) 
 - [Sequelize](https://sequelize.org/) 
 - [Sucrase](https://github.com/alangpierce/sucrase) 
