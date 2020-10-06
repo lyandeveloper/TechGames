@@ -1,67 +1,67 @@
 # TECHGAMES
 
-Techgames é um portal de notícias sobre jogos, desenvolvido como afins de estudo. Todo o sistema foi desenvolvido usando conceito API REST, no backend NodeJS e no front ReactJS e POSTGRES para banco de dados.
+Tech Games is a complete gaming news portal
 
 <img src="assets/print1.png"/>
 
+## Technology
+- NodeJS
+- ReactJS
+- Postgres
+- DateFNS
+- Sequelize
+- Sucrase
+
 ## Features
 
-O portal consta com um sistema de postagem onde o administrador coloca o banner da postagem, titulo, categoria e conteúdo do post, na qual implementei o Tinymce para postar o conteúdo em HTML.
+The portal has a posting system where the administrator places the post banner, title, category and post content, in which I implemented Tinymce to convert my text to HTML.
 
 <img src="assets/print9.png"/>
 
 <img src="assets/print10.png"/>
 
-Na página home, todos os posts são classificados pelo mais recentes. Usei o Date-FNS para calcular quanto tempo se passou desde a postagem.
+On the home page, all posts are ranked by the most recent. I used Date-FNS to calculate how much time has passed since posting.
 
 <img src="assets/print2.png"/>
 
-Essa é a aparência quando o usuário clica na postagem. Possibilitando ver vídeos e etc.
+This is what it looks like when the user clicks on the post. Making it possible to watch videos and etc.
 
 <img src="assets/print3.png"/>
 
 <img src="assets/print4.png"/>
 
-O usuário poderá compartilhar a postagem nas redes sociais, assim como comentar o mesmo usando o Facebook.
+The user can share the post on social networks, as well as comment on it using Facebook.
 
 <img src="assets/print5.png"/>
 
-O portal também consta com um sistema de pesquisa.
+The portal also has a search system.
 
 <img src="assets/print7.png"/>
 
-Também havendo a possiblidade de ver postagens por categoria.
+There is also the possibility to see posts by category.
 
 <img src="assets/print8.png"/>
 
-## Como testar o portal
+## How to run
 
-1. Dê um git clone no projeto.
+1. Clone the project.
 
-2. Quando clonar, abra a pasta backend em um editor de sua prefência, instale as depêndencias no seu terminal digitando:
+2. When cloning, open both backend and frontend folder in an editor of your preference, install the dependencies on your terminal by typing:
 
 ```sh
 yarn ou npm
-```
+``` 
 
-Faça isso também com a pasta frontend.
-
-3. Se você usa docker instale um container postgres, senão instale um servidor postgres em sua máquina. Com isso feito, rode as migrations, na pasta backend no terminal digite:
+3. If you use docker, install a postgres container, otherwise install a postgres server on your machine. With that done, in the backend folder run migrations, typing:
 
 ```sh
 yarn sequelize db:migrate ou npx sequelize db:migrate
 ```
 
-4. Com isso feito, ainda na pasta backend, inicie o servidor rodando o comando:
+4. With that done, start both backend and frontend servers by typing:
 
 ```sh
 yarn dev ou npx dev
-```
+``` 
 
-5. Vá na pasta frontend e inicie o servidor rodando o comando:
-
-```sh
-yarn start ou npm start
-```
-
-6. Quando abrir o navegador, acesse a rota 'http://localhost:3333/post/new' para adicionar uma nova postagem.
+5. Quando abrir o navegador, acesse a rota 'http://localhost:3333/post/new' para adicionar uma nova postagem.
