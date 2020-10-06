@@ -1,16 +1,51 @@
-# TECHGAMES
+<h1 align="center">
+  TechGames
+</h1>
 
-TechGames is a complete gaming news portal
+
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lyandeveloper/TechGames">
+  
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/top/lyandeveloper/TechGames">
+
+  <a href="https://github.com/lyandeveloper/TechGames/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lyandeveloper/TechGames">
+  </a>
+
+  <a href="https://github.com/lyandeveloper/TechGames/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/lyandeveloper/RSky">
+  </a>
+
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+  
+  <a href="https://github.com/lyandeveloper/">
+    <img alt="Author" src="https://img.shields.io/badge/author-Elian%20Campos-blue">
+  </a>
+</p> 
 
 <img src="assets/print1.png"/>
 
+<p align="center">
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#technology">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
+  <a href="#features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
+  <a href="#how-to-run">How to run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
+</p>
+
+<br> 
+
+## 💻 Project
+TechGames is a complete gaming news portal to stay on top of everything in the gaming world.<br>
+
 ## Technology
-- NodeJS
-- ReactJS
-- Postgres
-- DateFNS
-- Sequelize
-- Sucrase
+This project was developed with the following technologies:
+
+- [Node.js](https://nodejs.org/en/) 
+- [ReactJS](https://reactjs.org/) 
+- [MySQL](https://www.mysql.com/) 
+- [DateFNS](https://date-fns.org/) 
+- [Sequelize](https://sequelize.org/) 
+- [Sucrase](https://github.com/alangpierce/sucrase) 
 
 ## Features
 
@@ -65,3 +100,7 @@ yarn dev or npx dev
 ``` 
 
 5. When you open the browser, access the route 'http://localhost:3000/post/new' to add a new post.
+
+---
+
+Made By ♥ [Elian Campos](https://github.com/lyandeveloper). Add me on [LinkedIn](https://www.linkedin.com/in/elian-campos/) :wave: 
