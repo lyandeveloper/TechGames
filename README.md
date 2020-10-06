@@ -1,6 +1,6 @@
 # TECHGAMES
 
-Tech Games is a complete gaming news portal
+TechGames is a complete gaming news portal
 
 <img src="assets/print1.png"/>
 
@@ -49,19 +49,19 @@ There is also the possibility to see posts by category.
 2. When cloning, open both backend and frontend folder in an editor of your preference, install the dependencies on your terminal by typing:
 
 ```sh
-yarn ou npm
+yarn or npm
 ``` 
 
 3. If you use docker, install a postgres container, otherwise install a postgres server on your machine. With that done, in the backend folder run migrations, typing:
 
 ```sh
-yarn sequelize db:migrate ou npx sequelize db:migrate
+yarn sequelize db:migrate or npx sequelize db:migrate
 ```
 
 4. With that done, start both backend and frontend servers by typing:
 
 ```sh
-yarn dev ou npx dev
+yarn dev or npx dev
 ``` 
 
 5. Quando abrir o navegador, acesse a rota 'http://localhost:3333/post/new' para adicionar uma nova postagem.
